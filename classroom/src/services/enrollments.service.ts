@@ -1,7 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma/prisma.service';
 
-interface GetByCourseAndStudentIdParams {
+interface IGetByCourseAndStudentIdParams {
+  courseId: string;
+  studentId: string;
+}
+
+interface ICreateEnrollmentParams {
   courseId: string;
   studentId: string;
 }
@@ -13,7 +18,7 @@ export class EnrollmentsService {
   getByCourseAndStudentId({
     courseId,
     studentId,
-  }: GetByCourseAndStudentIdParams) {
+  }: IGetByCourseAndStudentIdParams) {
     return this.prisma.enrollment.findFirst({
       where: {
         courseId,
@@ -42,6 +47,15 @@ export class EnrollmentsService {
       },
       orderBy: {
         createdAt: 'desc',
+      },
+    });
+  }
+
+  createEnrollement({ courseId, studentId }: ICreateEnrollmentParams) {
+    return this.prisma.enrollment.create({
+      data: {
+        courseId,
+        studentId,
       },
     });
   }
