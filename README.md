@@ -1,4 +1,8 @@
-# Ignite Lab 01
+# Ignite Lab 01 🚀
+
+Projeto desenvolvido para estudo da arquitetura de microsserviços.
+
+## Tecnologias
 
 - NestJS
 - GraphQL
@@ -6,24 +10,6 @@
 - Next.js
 - Apollo Client (GraphQL)
 
-## Funcionalidades
+## Diagrama da aplicação
 
-### Serviço de compras (purchases)
-
-- [Admin] Cadastro de produtos
-- [Admin] Listagem de produtos
-
-- [Auth] Listagem de compras
-
-- [Public] Compra de um produto
-- [Public] Lista produtos disponíveis p/ compra
-
-### Serviço de sala de aula (classroom)
-
-- [Admin] Listar matrículas
-- [Admin] Listar alunos
-- [Admin] Listar cursos
-- [Admin] Cadastrar cursos
-
-- [Auth] Listar cursos que tenho acesso
-- [Auth] Acessar conteúdo do curso
+![Application Diagram](/.github/diagram.png)
